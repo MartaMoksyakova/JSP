@@ -2,13 +2,15 @@
 
 let power = function(num, pow) {
     if (pow === 0) return 1;
-
-    let result = num;
-
-    result = result * power (num, pow - 1)
-    return result  
+    else {
+      return pow > 0 ? num * power(num, pow - 1) : power(num, pow + 1) / num;
+    }
  };
  console.log(power(8, 2));
+ console.log(power(12, -2));
+ console.log(power(12, 0));
+
+
 
  //task 2 with apply()
 
@@ -63,7 +65,7 @@ displayDetails.call(carThird, "Oleg");
 //task 4
 
 function greet (person) {
-    if (person.name == 'amy') {
+    if (person.name === 'amy') {
       return 'hey amy'
     }
     return 'hey arnold'
